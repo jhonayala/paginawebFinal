@@ -146,24 +146,55 @@ img {
 	max-width: 100% !important;
 	height: auto;
 }
-.video-bg-box {
-    display: inline-block;
+.full-panel2 {
+	/*El no repeat hace que el fondo no se repita al ocupar una resolucion amplia*/
+	display:inline-block;
+	position: relative;
+	height: 100vh;
+	min-height: 100vh;
+	margin: 0 auto;
+	width: calc(100% - 60px);
+	padding: 0 30px 0 30px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-attachment: scroll;
+	clear: both;
+	overflow: hidden;
+	background-color: #dadada;
+}
+.main-content2{
+	display: block;
 	position: absolute;
-	vertical-align: middle;
-padding-left: 0%;
-	width: 100%;
-	height: 100%;
-    left: -5px;
+	top:30%;
+	z-index: 2;
+	margin: 0 auto;
+	max-width: 1200px;
+	width: calc(100% - 60px);
+	padding: 0;
+}
+.video-bg-box {
+    display: block;
+	padding-left: 0%;
+	z-index: 1;
+	width: 100vh;
+	height: 100vh;
+	min-height: 100vh;
     background-color: #dadada;
     box-shadow: inset 0 0 15px 0 #000000;
   
 }
 .video-background {
+	display: block;
+	position: absolute;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center top;
+	background-attachment: scroll;
 	width: 100%;
 	height: 100%;
+	
+    object-position: center center;
    
 
     
@@ -253,9 +284,10 @@ padding-left: 0%;
 
 .cover-title-image {
 	display: block;
-	position: relative;
+	position: absolute;
+	top:30%;
 	margin: 0 auto;
-	max-width: 700px !important;
+	max-width: 100% !important;
 	opacity: 0.7;
 }
 
@@ -264,10 +296,38 @@ padding-left: 0%;
 .half-panel .main-content {
 	width: calc(100%);
 }
+.btn-flotante {
+	font-size: 16px; /* Cambiar el tamaño de la tipografia */
+	text-transform: uppercase; /* Texto en mayusculas */
+	font-weight: bold; /* Fuente en negrita o bold */
+	color: #ffffff; /* Color del texto */
+	border-radius: 5px; /* Borde del boton */
+	letter-spacing: 2px; /* Espacio entre letras */
+	padding: 18px 30px; /* Relleno del boton */
+	position: absolute;
+	bottom: 40px;
+	right: 30px;
+	transition: all 300ms ease 0ms;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	z-index: 99;
+}
+.btn-flotante:hover {
+	-webkit-box-shadow: 0 0 20px 0 #000000;
+	box-shadow: 0 0 20px 0 #000000;
+
+	transform: translateY(-7px);
+}
 
 .middle {
 	display: table-cell;
 	position: relative;
+	vertical-align: middle;
+	width: 100%;
+}
+.middle2 {
+	display: table-cell;
+	position: absolute;
+	z-index: 3;
 	vertical-align: middle;
 	width: 100%;
 }
@@ -576,6 +636,7 @@ th {
 }
 
 @media (max-width: 860px) {
+	
 	.full ul li {
 		list-style: circle;
 		display: block;
@@ -594,5 +655,13 @@ th {
 	.forty ,
     .video-bg-box{
 		width: calc(100% - 20px);
-	}
-}
+	}}
+
+	@media only screen and (max-width: 600px) {
+		.btn-flotante {
+		   font-size: 10px;
+		   padding: 10px 15px;
+		   bottom: 15x;
+		   right: 15px;
+	   }}
+
