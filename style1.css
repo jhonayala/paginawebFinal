@@ -367,12 +367,12 @@ img {
 
 .forty {
 	display: block;
-	float: left;
+	float: center;
 	width: calc(40% - 30px);
 }
 
 .forty img {
-	width: 100%;
+	width: 95%;
 	height: auto;
 }
 
